@@ -1,0 +1,219 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap");
+
+:root {
+  color-scheme: dark;
+  font-family: "DM Sans", "Segoe UI", sans-serif;
+  background: #10131c;
+  color: #f3f4f8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 28px 16px;
+  background:
+    radial-gradient(ellipse at 50% 12%, rgba(86, 100, 177, 0.14), transparent 44%),
+    #10131c;
+}
+
+button {
+  font: inherit;
+}
+
+.calculator {
+  width: min(100%, 390px);
+  padding: 25px 24px 18px;
+  border: 1px solid #292d3a;
+  border-radius: 22px;
+  background: linear-gradient(155deg, #1a1e2a, #171a24 70%);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42), 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.topbar,
+.brand,
+.mode,
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.topbar,
+.footer {
+  justify-content: space-between;
+}
+
+.brand {
+  gap: 9px;
+  color: #e6e8f1;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.15px;
+}
+
+.brand-mark {
+  color: #a4afff;
+  font-size: 23px;
+  line-height: 1;
+}
+
+.brand-light {
+  color: #818697;
+  font-weight: 500;
+}
+
+.mode,
+.footer {
+  color: #858b9d;
+  font-family: "DM Mono", Consolas, monospace;
+  font-size: 9px;
+  letter-spacing: 0.8px;
+}
+
+.mode {
+  gap: 6px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #76d8ad;
+  box-shadow: 0 0 9px rgba(118, 216, 173, 0.65);
+}
+
+.display {
+  min-height: 174px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 26px 2px 22px;
+  overflow: hidden;
+}
+
+.display-label {
+  align-self: flex-start;
+  margin: 0 0 13px;
+  color: #777e91;
+  font-family: "DM Mono", Consolas, monospace;
+  font-size: 9px;
+  letter-spacing: 1.4px;
+}
+
+.expression,
+.result {
+  width: 100%;
+  overflow: hidden;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.expression {
+  min-height: 24px;
+  color: #9097a9;
+  font-family: "DM Mono", Consolas, monospace;
+  font-size: 16px;
+}
+
+.result {
+  margin-top: 5px;
+  color: #f5f6fb;
+  font-size: clamp(42px, 12vw, 56px);
+  font-weight: 500;
+  letter-spacing: -2.5px;
+  line-height: 1.1;
+}
+
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.key {
+  min-width: 0;
+  height: 62px;
+  border: 1px solid #2b2f3d;
+  border-radius: 13px;
+  background: #222633;
+  color: #f0f1f7;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  transition: background 130ms ease, border-color 130ms ease, transform 130ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.key:hover {
+  border-color: #454b5e;
+  background: #2a2f3e;
+}
+
+.key:active {
+  transform: scale(0.96);
+}
+
+.key:focus-visible {
+  outline: 2px solid #a4afff;
+  outline-offset: 2px;
+}
+
+.key-muted {
+  background: #292d3a;
+  color: #afb4c3;
+  font-size: 15px;
+}
+
+.key-operator {
+  background: #252a3b;
+  color: #aeb9ff;
+  font-size: 23px;
+}
+
+.key-equals {
+  border-color: #858ff0;
+  background: #8994ff;
+  color: #10131c;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.key-equals:hover {
+  border-color: #aab1ff;
+  background: #a0a9ff;
+}
+
+.footer {
+  padding: 19px 2px 0;
+  font-size: 8px;
+  letter-spacing: 0.75px;
+}
+
+.keyboard-hint span {
+  color: #aeb9ff;
+  font-size: 12px;
+}
+
+@media (max-width: 380px) {
+  .calculator {
+    padding: 20px 17px 16px;
+  }
+
+  .keypad {
+    gap: 8px;
+  }
+
+  .key {
+    height: 58px;
+  }
+}
